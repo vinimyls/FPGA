@@ -38,7 +38,7 @@ this project contain a simple and in VHDL and its test bench.
 		port(
 			a	:	in  std_logic;
 			b	:	in  std_logic;
-			o	:  	out std_logic
+			o	:  out std_logic
 		);
 	end component;
 	
