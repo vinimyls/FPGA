@@ -25,7 +25,7 @@ begin
         port map(
             add_term1_i => add_1_r,
             add_term2_i => add_2_r,
-            o_result    => result_w
+            result_o    => result_w
         );
 
         process is

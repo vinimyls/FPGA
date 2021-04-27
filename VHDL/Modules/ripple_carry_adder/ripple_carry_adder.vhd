@@ -27,15 +27,15 @@ architecture rtl of ripple_carry_adder is
 begin
     carry_w(0) <= '0';
 
-    set_width for ii in 0 width_g-1 generate
+    set_width : for ii in 0 to width_g-1 generate
 
     Full_adder_i_inst : full_adder
     port map(
-        bit1_i  <= add_term1_i(ii),
-        bitw_i  <= add_term2_i(ii),
-        carry_i <= carry_w(ii),
-        sum_o   <= sum_w(ii),
-        carry_o <= carry_w(ii+1)
+        bit1_i  => add_term1_i(ii),
+        bit2_i  => add_term2_i(ii),
+        carry_i => carry_w(ii),
+        sum_o   => sum_w(ii),
+        carry_o => carry_w(ii+1)
     );
     end generate set_width;
     result_o <= carry_w(width_g) & sum_w;
